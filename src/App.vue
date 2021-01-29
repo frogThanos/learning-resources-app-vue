@@ -1,22 +1,16 @@
 <template>
-  <ul>
-    <LearningResourceItem
-      v-for="res in storedResources"
-      :key="res.id"
-      :title="res.title"
-      :description="res.description"
-      :link="res.link"
-    ></LearningResourceItem>
-  </ul>
+  <LearningResourceList
+    :storedResources="storedResources"
+  ></LearningResourceList>
 </template>
 
 <script>
-import LearningResourceItem from "./components/LearningResource/LearningResourceItem";
+import LearningResourceList from "./components/LearningResource/LearningResourceList";
 
 export default {
   name: "App",
   components: {
-    LearningResourceItem
+    LearningResourceList,
   },
   data() {
     return {
@@ -25,17 +19,17 @@ export default {
           id: "official-guide",
           title: "Official Guide",
           description: "The official Vue.js documentation.",
-          link: "https://vuejs.org/"
+          link: "https://vuejs.org/",
         },
         {
           id: "google",
           title: "Google",
           description: "The official Google website.",
-          link: "https://google.com/"
-        }
-      ]
+          link: "https://google.com/",
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 

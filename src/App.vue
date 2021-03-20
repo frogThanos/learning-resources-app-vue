@@ -22,17 +22,17 @@ export default {
           id: "official-guide",
           title: "Official Guide",
           description: "The official Vue.js documentation.",
-          link: "https://vuejs.org/",
+          link: "https://vuejs.org/"
         },
         {
           id: "google",
           title: "Google",
           description: "The official Google website.",
-          link: "https://google.com/",
-        },
-      ],
+          link: "https://google.com/"
+        }
+      ]
     };
-  },
+  }
 };
 </script>
 

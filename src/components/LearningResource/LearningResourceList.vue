@@ -15,8 +15,8 @@ import LearningResourceItem from "./LearningResourceItem";
 export default {
   props: ["storedResources"],
   components: {
-    LearningResourceItem,
-  },
+    LearningResourceItem
+  }
 };
 </script>
 

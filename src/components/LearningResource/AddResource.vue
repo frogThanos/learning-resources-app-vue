@@ -1,4 +1,18 @@
 <template>
+  <base-dialog
+    v-if="inputIsInvalid"
+    title="Invalid Input"
+    @close-dialog="confirmError"
+  >
+    <template #section>
+      <p>
+        Unfortunately, at least one input value is invalid.
+      </p>
+    </template>
+    <template #actions>
+      <base-button @click="confirmError">Okay</base-button>
+    </template>
+  </base-dialog>
   <base-card>
     <form @submit.prevent="submitData">
       <div class="form-control">
@@ -26,8 +40,16 @@
 </template>
 
 <script>
+import BaseButton from "../UI/BaseButton.vue";
+import BaseDialog from "../UI/BaseDialog.vue";
 export default {
+  components: { BaseDialog, BaseButton },
   inject: ["addResource"],
+  data() {
+    return {
+      inputIsInvalid: false
+    };
+  },
   methods: {
     submitData() {
       const enteredTitle = this.$refs.titleInput.value;
@@ -39,10 +61,14 @@ export default {
         enteredDescription.trim() === "" ||
         enteredLink.trim() === ""
       ) {
+        this.inputIsInvalid = true;
         return;
       }
 
       this.addResource(enteredTitle, enteredDescription, enteredLink);
+    },
+    confirmError() {
+      this.inputIsInvalid = false;
     }
   }
 };

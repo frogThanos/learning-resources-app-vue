@@ -1,4 +1,5 @@
 <template>
+  <the-header title="RememberMe"></the-header>
   <LearningResourceList
     :storedResources="storedResources"
   ></LearningResourceList>
@@ -6,11 +7,13 @@
 
 <script>
 import LearningResourceList from "./components/LearningResource/LearningResourceList";
+import TheHeader from "./components/layouts/TheHeader";
 
 export default {
   name: "App",
   components: {
     LearningResourceList,
+    TheHeader
   },
   data() {
     return {

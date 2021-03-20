@@ -7,7 +7,7 @@
       </header>
       <p>{{ description }}</p>
       <nav>
-        <a :href="link">View resource</a>
+        <a :href="link" target="_blank">View resource</a>
       </nav>
     </base-card>
   </li>
